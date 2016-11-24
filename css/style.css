@@ -5,8 +5,9 @@ body{
 }
 
 #selectButton{
-    width: 10em;
-    height: 10em;
+    width: 20em;
+    height: 20em;
+    margin: auto;
 }
 
 .fullArea{
@@ -17,8 +18,9 @@ body{
 }
 
 .fileSelector{
-    position:absolute;
+    position:relative;
     z-index: 10;
     width:300px;
     height: 300px;
+    margin: auto;
 }

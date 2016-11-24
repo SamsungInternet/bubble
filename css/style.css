@@ -1,0 +1,24 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color:#3D3D3D;
+}
+
+#selectButton{
+    width: 10em;
+    height: 10em;
+}
+
+.fullArea{
+    position:absolute;
+    z-index: 0;
+    width:100%;
+    height: 100%;
+}
+
+.fileSelector{
+    position:absolute;
+    z-index: 10;
+    width:300px;
+    height: 300px;
+}

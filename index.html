@@ -1,10 +1,19 @@
-<doctype! html>
+<!DOCTYPE html>
 <html>
 <head>
+    <link href="css/style.css" rel="stylesheet">
     <script src="js/aroundviewer.js"></script>
+    <script src="js/e/aframe.js"></script>
 </head>
-<body>
-    <input type="file" id="image" onchange="handleFiles(this.files)">
-    <img id="myimage">
+<body onload="init()">
+    <main>
+        <div id="virtualArea" class="fullArea">
+            
+        </div>
+        <div class="fileSelector">
+            <input type="file" id="fileSelection" onchange="handleFiles(this.files)" style="display:none">
+            <a href="#" id="selectButton"><img src="i/uploadButton.png" id="selectButton"></a>
+        </div>
+    </main>
 </body>
 </html>

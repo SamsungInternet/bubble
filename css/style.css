@@ -23,4 +23,25 @@ body{
     width:300px;
     height: 300px;
     margin: auto;
+    animation-name: minimize;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes minimize {
+    from {
+        top: 100px;
+    }
+    to {
+        top:500px;
+    }
+}
+
+@keyframes maximize {
+    from {
+        top: 500px;
+    }
+    to {
+        top:100px;
+    }
 }

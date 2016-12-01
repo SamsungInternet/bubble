@@ -18,6 +18,7 @@ body{
 .fileSelector{
     position:relative;
     top:100px;
+    max-width: 20em;
     z-index: 10;
     margin: auto;
     animation-name: maximize;

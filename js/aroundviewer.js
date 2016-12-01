@@ -25,7 +25,6 @@ function handleFiles(files){
 
             window.URL.revokeObjectURL(this.src);
         }
-        document.body.appendChild(img);
     }
 }
 

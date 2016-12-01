@@ -2,7 +2,7 @@ var filSelBtnState = false;
 
 function handleFiles(files){
     if (!files.length) {
-        fileList.innerHTML = "<p>No files selected!</p>";
+        
     } else {
         var placeHolder = document.getElementById('virtualArea');
         placeHolder.innerHTML= ""; //must update to change the texture instead

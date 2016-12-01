@@ -33,13 +33,13 @@ body{
         top: 5em;
     }
     to {
-        top:-15em;
+        top:-14em;
     }
 }
 
 @keyframes maximize {
     from {
-        top: -15em;
+        top: -14em;
     }
     to {
         top:5em;

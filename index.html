@@ -11,7 +11,9 @@
 <body onload="init()">
     <main>
         <div id="virtualArea" class="fullArea">
-            <a-scene></a-scene>
+            <a-scene>
+                <a-sky src="i/around.jpg"></a-sky>
+            </a-scene>
         </div>
         <div id="fileSelector" class="fileSelector">
             <input type="file" id="fileSelection" onchange="handleFiles(this.files)" style="display:none">

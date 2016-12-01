@@ -6,6 +6,7 @@ body{
 
 #selectButton{
     margin: auto;
+    width: 25em;
 }
 
 .fullArea{
@@ -18,9 +19,9 @@ body{
 .fileSelector{
     position:relative;
     top:100px;
-    max-width: 20em;
     z-index: 10;
     margin: auto;
+    width: 25em;
     animation-name: maximize;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -29,18 +30,18 @@ body{
 
 @keyframes minimize {
     from {
-        top: 100px;
+        top: 5em;
     }
     to {
-        top:-250px;
+        top:-15em;
     }
 }
 
 @keyframes maximize {
     from {
-        top: -250px;
+        top: -15em;
     }
     to {
-        top:100px;
+        top:5em;
     }
 }

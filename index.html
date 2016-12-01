@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="i/bubbleicon.png">
     <script src="js/aroundviewer.js"></script>
@@ -10,7 +11,7 @@
 <body onload="init()">
     <main>
         <div id="virtualArea" class="fullArea">
-            
+            <a-scene></a-scene>
         </div>
         <div id="fileSelector" class="fileSelector">
             <input type="file" id="fileSelection" onchange="handleFiles(this.files)" style="display:none">

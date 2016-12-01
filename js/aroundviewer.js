@@ -5,17 +5,18 @@ function handleFiles(files){
         
     } else {
         var placeHolder = document.getElementById('virtualArea');
-        placeHolder.innerHTML= ""; //must update to change the texture instead
+        placeHolder.innerHTML= "<p>your image is loading</p>"; //must update to change the texture instead
         var img = document.createElement('img');
         img.setAttribute('id', 'texture')
         img.src = window.URL.createObjectURL(files[0]);
         var skys = document.getElementsByTagName('a-sky');
         img.onload = function() {
-           
+            
             var sky = document.createElement('a-sky');
             var scene = document.createElement('a-scene');
             var assets = document.createElement('a-assets');
-            var virtualPlaceholder = document.getElementById('virtualArea');
+            virtualPlaceholder = document.getElementById('virtualArea');
+            virtualPlaceholder.innerHTML = "";
 
             assets.appendChild(img);
             sky.setAttribute('src', '#texture');

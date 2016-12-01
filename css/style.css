@@ -5,8 +5,6 @@ body{
 }
 
 #selectButton{
-    width: 20em;
-    height: 20em;
     margin: auto;
 }
 
@@ -19,13 +17,15 @@ body{
 
 .fileSelector{
     position:relative;
+    top:100px;
     z-index: 10;
     width:300px;
     height: 300px;
     margin: auto;
-    animation-name: minimize;
-    animation-duration: 4s;
+    animation-name: maximize;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
 }
 
 @keyframes minimize {
@@ -33,13 +33,13 @@ body{
         top: 100px;
     }
     to {
-        top:500px;
+        top:-250px;
     }
 }
 
 @keyframes maximize {
     from {
-        top: 500px;
+        top: -250px;
     }
     to {
         top:100px;

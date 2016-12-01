@@ -1,3 +1,5 @@
+var filSelBtnState = false;
+
 function handleFiles(files){
     if (!files.length) {
         fileList.innerHTML = "<p>No files selected!</p>";
@@ -32,7 +34,14 @@ function init(){
         fileElem = document.getElementById("fileSelection");
 
     uploadBtn.addEventListener("click", function (e) {
-        if (fileElem) {
+        var fs = document.getElementById('fileSelector');
+        if(filSelBtnState)
+            fs.style.animationName="maximize";
+        else
+            fs.style.animationName="minimize";
+        filSelBtnState = !filSelBtnState;
+
+        if (fileElem && filSelBtnState) {
             fileElem.click();
         }
         e.preventDefault(); // prevent navigation to "#"

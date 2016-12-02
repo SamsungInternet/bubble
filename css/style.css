@@ -7,7 +7,7 @@ body{
 
 #selectButton{
     margin: auto;
-    width: 25em;
+     max-width: 25em;
 }
 
 .fullArea{
@@ -22,7 +22,7 @@ body{
     top:100px;
     z-index: 10;
     margin: auto;
-    width: 25em;
+    max-width: 25em;
     animation-name: maximize;
     animation-duration: 1s;
     animation-fill-mode: forwards;

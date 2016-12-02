@@ -1,13 +1,13 @@
 // Perform install steps
 var CACHE_NAME = 'bubble-v1';
 var urlsToCache = [
-    '/',
-    '/css/style.css',
-    '/js/aroundviewer.js',
-    '/js/e/aframe.js',
-    '/i/bubbleicon.png',
-    '/i/uploadButton.png',
-    '/i/around.jpg'
+    '/bubble',
+    'css/style.css',
+    'js/aroundviewer.js',
+    'js/e/aframe.js',
+    'i/bubbleicon.png',
+    'i/uploadButton.png',
+    'i/around.jpg'
 ];
 
 self.addEventListener('install', function(event) {

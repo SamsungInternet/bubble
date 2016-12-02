@@ -22,7 +22,7 @@
     "type": "image/png"
   }],
   "start_url": "/index.html",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#987FFF",
   "background_color": "#3d3d3d"

@@ -7,22 +7,24 @@ body{
 
 #selectButton{
     margin: auto;
-     max-width: 25em;
+    max-width: 100%;
 }
 
 .fullArea{
     position:absolute;
     z-index: 0;
-    width:100%;
+    width: 100%;
     height: 100%;
 }
 
 .fileSelector{
     position:relative;
-    top:100px;
+    top: 5em;
+    transform: translateY(0);
+    will-change: transform;
     z-index: 10;
     margin: auto;
-    max-width: 25em;
+    max-width: 100%;
     animation-name: maximize;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -31,18 +33,27 @@ body{
 
 @keyframes minimize {
     from {
-        top: 5em;
+        transform: translateY(0);
     }
     to {
-        top:-14.5em;
+        transform: translateY(-19.5em);
     }
 }
 
 @keyframes maximize {
     from {
-        top: -14.5em;
+        transform: translateY(-19.5em);
     }
     to {
-        top:5em;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 400px) {
+    #selectButton {
+        max-width: 400px;
+    }
+    .fileSelector {
+        max-width: 400px;
     }
 }

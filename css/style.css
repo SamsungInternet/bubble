@@ -19,7 +19,9 @@ body{
 
 .fileSelector{
     position:relative;
-    top:100px;
+    top: 5em;
+    transform: translateY(0);
+    will-change: transform;
     z-index: 10;
     margin: auto;
     max-width: 25em;
@@ -31,18 +33,18 @@ body{
 
 @keyframes minimize {
     from {
-        top: 5em;
+        transform: translateY(0);
     }
     to {
-        top:-14.5em;
+        transform: translateY(-19.5em);
     }
 }
 
 @keyframes maximize {
     from {
-        top: -14.5em;
+        transform: translateY(-19.5em);
     }
     to {
-        top:5em;
+        transform: translateY(0);
     }
 }

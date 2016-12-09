@@ -20,7 +20,6 @@ function handleFiles(files){
 
             assets.appendChild(img);
             sky.setAttribute('src', '#texture');
-            sky.setAttribute('color', '#153453');
             scene.appendChild(assets);
             scene.appendChild(sky);
             virtualPlaceholder.appendChild(scene);

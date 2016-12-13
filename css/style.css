@@ -1,24 +1,24 @@
-body{
+body {
     padding: 0px;
     margin: 0px;
-    background-color:#3D3D3D;
-    color:#FFF;
+    background-color: #3D3D3D;
+    color: #FFF;
 }
 
-#selectButton{
+#selectButton {
     margin: auto;
     max-width: 100%;
 }
 
-.fullArea{
-    position:absolute;
+.fullArea {
+    position: absolute;
     z-index: 0;
     width: 100%;
     height: 100%;
 }
 
-.fileSelector{
-    position:relative;
+.fileSelector {
+    position: relative;
     top: 5em;
     transform: translateY(0);
     will-change: transform;

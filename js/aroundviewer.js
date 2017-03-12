@@ -13,7 +13,7 @@ function handleFiles(files){
 //can work with a create url from a file from the device or with "isExternal" to target a url 
 function createImage(url, isExternal){
     var placeHolder = document.getElementById('virtualArea');
-    placeHolder.innerHTML= "<p>your image is loading</p>"; //must update to change the texture instead
+    placeHolder.innerHTML= "<div class='loadText'>your image is loading</div>"; //must update to change the texture instead
     var img = document.createElement('img');
     img.setAttribute('id', 'texture')
     img.src = (isExternal)?url:window.URL.createObjectURL(url);
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(ext_res != ''){
         var fs = document.getElementById('fileSelector');
         fs.style.animationName="minimize";
+        filSelBtnState = !filSelBtnState;
         createImage(ext_res, true);
     }
     init();

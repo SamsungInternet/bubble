@@ -59,8 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
     var ext_res = getUrlParameter('pic');
     if(ext_res != ''){
         var fs = document.getElementById('fileSelector');
+        fileElem = document.getElementById("fileSelection");
+        
         fs.style.animationName="minimize";
         filSelBtnState = !filSelBtnState;
+        
+        if (fileElem && filSelBtnState) {
+            fileElem.click();
+        }
+        e.preventDefault(); // prevent navigation to "#"
+        
         createImage(ext_res, true);
     }
     init();

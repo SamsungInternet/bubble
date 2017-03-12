@@ -1,7 +1,6 @@
 // Perform install steps
 var CACHE_NAME = 'bubble-v1';
 var urlsToCache = [
-    '/bubble',
     'css/style.css',
     'js/aroundviewer.js',
     'js/e/aframe.js',

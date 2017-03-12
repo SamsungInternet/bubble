@@ -5,28 +5,34 @@ function handleFiles(files){
     if (!files.length) {
         
     } else {
-        var placeHolder = document.getElementById('virtualArea');
-        placeHolder.innerHTML= "<p>your image is loading</p>"; //must update to change the texture instead
-        var img = document.createElement('img');
-        img.setAttribute('id', 'texture')
-        img.src = window.URL.createObjectURL(files[0]);
-        var skys = document.getElementsByTagName('a-sky');
-        img.onload = function() {
-            
-            var sky = document.createElement('a-sky');
-            var scene = document.createElement('a-scene');
-            var assets = document.createElement('a-assets');
-            virtualPlaceholder = document.getElementById('virtualArea');
-            virtualPlaceholder.innerHTML = "";
+        createImage(files[0], false);
+    }
+}
 
-            assets.appendChild(img);
-            sky.setAttribute('src', '#texture');
-            scene.appendChild(assets);
-            scene.appendChild(sky);
-            virtualPlaceholder.appendChild(scene);
+//creates the aframe structure that holds the sky inside the scene.
+//can work with a create url from a file from the device or with "isExternal" to target a url 
+function createImage(url, isExternal){
+    var placeHolder = document.getElementById('virtualArea');
+    placeHolder.innerHTML= "<p>your image is loading</p>"; //must update to change the texture instead
+    var img = document.createElement('img');
+    img.setAttribute('id', 'texture')
+    img.src = (isExternal)?url:window.URL.createObjectURL(url);
+    img.onload = function() {
+        
+        var sky = document.createElement('a-sky');
+        var scene = document.createElement('a-scene');
+        var assets = document.createElement('a-assets');
+        virtualPlaceholder = document.getElementById('virtualArea');
+        virtualPlaceholder.innerHTML = "";
 
+        assets.appendChild(img);
+        sky.setAttribute('src', '#texture');
+        scene.appendChild(assets);
+        scene.appendChild(sky);
+        virtualPlaceholder.appendChild(scene);
+
+        if(!isExternal)
             window.URL.revokeObjectURL(this.src);
-        }
     }
 }
 
@@ -50,16 +56,19 @@ function init(){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    if(window.location.search == ''){
-        init();   
+    var ext_res = getUrlParameter('pic');
+    if(ext_res != ''){
+        var fs = document.getElementById('fileSelector');
+        fs.style.animationName="minimize";
+        createImage(ext_res, true);
     }
-    else{
-        var ext_res = '';
-        searchPars = new URLSearchParams(window.location.search);
-        if(searchPars.has('e') === true){
-            ext_res = searchPars.get('e');
-            alert(ext_res);
-        }
-    }
-     
+    init();
 });
+
+//gets a query string parameter
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};

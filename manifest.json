@@ -1,8 +1,8 @@
 {
   "lang": "en",
   "dir": "ltr",
-  "name": "bubble 360 viewer",
-  "description": "360 image viewer from Samsung Internet",
+  "name": "bubble 360° viewer",
+  "description": "360° image viewer from Samsung Internet",
   "short_name": "bubble",
   "icons": [ {
     "src": "i/icons/launcher-icon-192.png",

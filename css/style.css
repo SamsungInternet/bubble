@@ -7,12 +7,12 @@ body {
 
 .menuButton {
     margin: auto;
-    width: 10em;
+    width: 11em;
 }
 
 #bIcon{
     margin: auto;
-    width: 10em;
+    width: 11em;
 }
 
 .fullArea {
@@ -27,9 +27,9 @@ body {
     top: 5em;
     transform: translateY(0);
     will-change: transform;
-    z-index: 10;
+    z-index: 11;
     margin: auto;
-    width: 10em;
+    width: 12em;
     animation-name: maximize;
     animation-duration: 1s;
     animation-fill-mode: forwards;

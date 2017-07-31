@@ -7,12 +7,12 @@ body {
 
 .menuButton {
     margin: auto;
-    width: 15em;
+    width: 10em;
 }
 
 #bIcon{
     margin: auto;
-    width: 15em;
+    width: 10em;
 }
 
 .fullArea {
@@ -27,9 +27,9 @@ body {
     top: 5em;
     transform: translateY(0);
     will-change: transform;
-    z-index: 15;
+    z-index: 10;
     margin: auto;
-    width: 15em;
+    width: 10em;
     animation-name: maximize;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -65,27 +65,27 @@ body {
 /*medium sized screen*/
 @media (min-width: 400px) {
     .menuButton {
-        width: 20em;
+        width: 18em;
     }
     .fileSelector {
-        width: 20em;
+        width: 18em;
     }
     #bIcon{
         margin: auto;
-        width: 20em;
+        width: 18em;
     }
 }
 
 /*big sized screen*/
 @media (min-width: 1000px) {
     .menuButton {
-        width: 30em;
+        width: 25em;
     }
     .fileSelector {
-        width: 30em;
+        width: 25em;
     }
     #bIcon{
         margin: auto;
-        width: 30em;
+        width: 25em;
     }
 }

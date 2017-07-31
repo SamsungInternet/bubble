@@ -6,7 +6,8 @@ body {
 }
 
 .menuButton {
-    margin: auto;
+    margin: .5em;
+
     width: 11em;
 }
 

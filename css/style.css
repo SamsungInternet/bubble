@@ -29,7 +29,7 @@ body {
     will-change: transform;
     z-index: 15;
     margin: auto;
-    width: 10em;
+    width: 15em;
     animation-name: maximize;
     animation-duration: 1s;
     animation-fill-mode: forwards;

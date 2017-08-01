@@ -1,8 +1,21 @@
 var passedUrl = '';
 
+document.addEventListener('DOMContentLoaded', function() {
+    var ext_res = getUrlParameter('pic');
+    if(ext_res != ''){
+        var fs = document.getElementById('fileSelector');
+        
+        fs.style.animationName="minimize";
+        
+        createImage(ext_res, true);
+    }
+    init();
+});
+
+
 function handleFiles(files){
     if (!files.length) {
-        
+        console.log('no file found');
     } else {
         createImage(files[0], false);
     }
@@ -60,18 +73,6 @@ function init(){
         e.preventDefault(); // prevent navigation to "#"
         }, false);
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    var ext_res = getUrlParameter('pic');
-    if(ext_res != ''){
-        var fs = document.getElementById('fileSelector');
-        
-        fs.style.animationName="minimize";
-        
-        createImage(ext_res, true);
-    }
-    init();
-});
 
 //gets a query string parameter
 function getUrlParameter(name) {

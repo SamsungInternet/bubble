@@ -11,6 +11,11 @@ body {
     width: 11em;
 }
 
+#btnMenu{
+    margin: auto;
+    width: 5em;
+}
+
 #bIcon{
     margin: auto;
     width: 11em;
@@ -50,13 +55,13 @@ body {
         transform: translateY(0);
     }
     to {
-        transform: translateY(-20.5em);
+        transform: translateY(-35.5em);
     }
 }
 
 @keyframes maximize {
     from {
-        transform: translateY(-20.5em);
+        transform: translateY(-35.5em);
     }
     to {
         transform: translateY(0);

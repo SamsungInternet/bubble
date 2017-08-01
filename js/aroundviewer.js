@@ -37,8 +37,14 @@ function createImage(url, isExternal){
 }
 
 function init(){
-    var uploadBtn = document.getElementById("selectButton"),
-        fileElem = document.getElementById("fileSelection");
+    var uploadBtn = document.getElementById('selectButton'),
+        fileElem = document.getElementById('fileSelection'),
+        btnEllipsis = document.getElementById('btnMenu');
+
+    btnEllipsis.addEventListener('click', function(){
+         var fs = document.getElementById('fileSelector');
+        fs.style.animationName="maximize";
+    });
 
     uploadBtn.addEventListener("click", function (e) {
         var fs = document.getElementById('fileSelector');

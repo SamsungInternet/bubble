@@ -1,4 +1,3 @@
-var filSelBtnState = false;
 var passedUrl = '';
 
 function handleFiles(files){
@@ -43,18 +42,19 @@ function init(){
 
     btnEllipsis.addEventListener('click', function(){
          var fs = document.getElementById('fileSelector');
-        fs.style.animationName="maximize";
+         var bm = document.getElementById('btnMenu');
+        fs.style.animationName='maximize';
+        bm.style.display = 'none';
     });
 
     uploadBtn.addEventListener("click", function (e) {
         var fs = document.getElementById('fileSelector');
-        if(filSelBtnState)
-            fs.style.animationName="maximize";
-        else
-            fs.style.animationName="minimize";
-        filSelBtnState = !filSelBtnState;
+        var bm = document.getElementById('btnMenu');
 
-        if (fileElem && filSelBtnState) {
+        fs.style.animationName = "minimize";
+        bm.style.display = 'block';
+
+        if (fileElem) {
             fileElem.click();
         }
         e.preventDefault(); // prevent navigation to "#"

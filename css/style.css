@@ -13,7 +13,8 @@ body {
 
 #btnMenu{
     margin: auto;
-    width: 5em;
+    width: 2em;
+    display: none;
 }
 
 #bIcon{
@@ -55,13 +56,13 @@ body {
         transform: translateY(0);
     }
     to {
-        transform: translateY(-35.5em);
+        transform: translateY(-20.5em);
     }
 }
 
 @keyframes maximize {
     from {
-        transform: translateY(-35.5em);
+        transform: translateY(-20.5em);
     }
     to {
         transform: translateY(0);
@@ -80,6 +81,27 @@ body {
         margin: auto;
         width: 18em;
     }
+    #btnMenu{
+        margin: auto;
+        width: 4em;
+    }
+    @keyframes minimize {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-27.5em);
+        }
+    }
+
+    @keyframes maximize {
+        from {
+            transform: translateY(-27.5em);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
 }
 
 /*big sized screen*/
@@ -93,5 +115,26 @@ body {
     #bIcon{
         margin: auto;
         width: 25em;
+    }
+    #btnMenu{
+        margin: auto;
+        width: 5em;
+    }
+    @keyframes minimize {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-35.5em);
+        }
+    }
+
+    @keyframes maximize {
+        from {
+            transform: translateY(-35.5em);
+        }
+        to {
+            transform: translateY(0);
+        }
     }
 }

@@ -4,15 +4,41 @@ document.addEventListener('DOMContentLoaded', function() {
     var ext_res = getUrlParameter('pic');
     if(ext_res != ''){
         var fs = document.getElementById('fileSelector');
-        
+        var bm = document.getElementById('btnMenu');
         fs.style.animationName="minimize";
-        
+        bm.style.display = 'block';
         createImage(ext_res, true);
     }
     init();
 });
 
+function init(){
+    var uploadBtn = document.getElementById('selectButton'),
+        fileElem = document.getElementById('fileSelection'),
+        btnEllipsis = document.getElementById('btnMenu');
 
+    btnEllipsis.addEventListener('click', function(){
+         var fs = document.getElementById('fileSelector');
+         var bm = document.getElementById('btnMenu');
+        fs.style.animationName='maximize';
+        bm.style.display = 'none';
+    });
+
+    uploadBtn.addEventListener('click', function (e) {
+        var fs = document.getElementById('fileSelector');
+        var bm = document.getElementById('btnMenu');
+
+        fs.style.animationName = 'minimize';
+        bm.style.display = 'block';
+
+        if (fileElem) {
+            fileElem.click();
+        }
+        e.preventDefault(); // prevent navigation to "#"
+        }, false);
+}
+
+//handles the file selection form the device
 function handleFiles(files){
     if (!files.length) {
         console.log('no file found');
@@ -46,32 +72,6 @@ function createImage(url, isExternal){
         if(!isExternal)
             window.URL.revokeObjectURL(this.src);
     }
-}
-
-function init(){
-    var uploadBtn = document.getElementById('selectButton'),
-        fileElem = document.getElementById('fileSelection'),
-        btnEllipsis = document.getElementById('btnMenu');
-
-    btnEllipsis.addEventListener('click', function(){
-         var fs = document.getElementById('fileSelector');
-         var bm = document.getElementById('btnMenu');
-        fs.style.animationName='maximize';
-        bm.style.display = 'none';
-    });
-
-    uploadBtn.addEventListener("click", function (e) {
-        var fs = document.getElementById('fileSelector');
-        var bm = document.getElementById('btnMenu');
-
-        fs.style.animationName = "minimize";
-        bm.style.display = 'block';
-
-        if (fileElem) {
-            fileElem.click();
-        }
-        e.preventDefault(); // prevent navigation to "#"
-        }, false);
 }
 
 //gets a query string parameter

@@ -1,6 +1,6 @@
 var passedUrl = '';
 var peer = null;
-var tconn = '';
+var conn = null;
 
 document.addEventListener('DOMContentLoaded', function() {
     var ext_res = getUrlParameter('pic');
@@ -94,30 +94,25 @@ var getCurrentImageData = function(){
 };
 
 var startPeer = function(){
+    
     peer = new Peer({key: 'bw0dbyumsbz3q5mi'});
     peer.on('open', function(id) {
         document.getElementById('peerId').innerText = id;
     });
-        
-    //wait for conn on second peer
-    peer.on('connection', function(conn) {
 
-        console.log('receiving connection from ' + conn.peer);
-        tconn = peer.connect(conn.peer);
-        tconn.send('gotcha');
+    peer.on('connection', function(con){
 
-        conn.on('open'), function(){
-            console.log('opened a conn');
-        };
+        console.log('incoming connection from '+ con.peer);
 
-        conn.on('data', function(data){
-            console.log('received: ' + data);
+        con.on('data', function(data){
+            console.log('Incoming data', data);
+            con.send('received ' + peer.id);
         });
     });
-}
 
-var send = function(conn, msg){
-    conn.send(msg);
+
+
+
 };
 
 

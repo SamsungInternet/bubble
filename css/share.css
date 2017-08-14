@@ -1,6 +1,24 @@
 .shareBanner{
     position: absolute;
     top:0px;
-    right: -5px;
-    width: 15em;
+    right: 0px;
+    background-color: rgba(0, 150, 255, .7);
+    padding: .5em;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #3D3D3D;
+    color: #FFF;
+    font-family:'Samsung One'; 
+}
+
+a:link, a:hover, a:visited, a:active{
+    color: #FFF;
+    text-decoration: none;
+}
+
+.btnIcon{
+    vertical-align: middle;
 }

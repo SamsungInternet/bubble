@@ -19,7 +19,10 @@
     <main>
         <div id="virtualArea" class="fullArea">
             <a-scene look-controls>
-                <a-sky src="i/around.jpg"></a-sky>
+                <a-assets>
+                    <img src="i/around.jpg" id="texture">
+                </a-assets>
+                <a-sky src="#texture"></a-sky>
             </a-scene>
         </div>
         <div id="fileSelector" class="fileSelector">

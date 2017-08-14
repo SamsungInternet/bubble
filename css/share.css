@@ -27,5 +27,6 @@ a:link, a:hover, a:visited, a:active{
     font-size: 3em;
     margin: auto;
     width: 5em;
-    padding: 3em;
+    padding: 1em;
+    padding-top: 3em;
 }

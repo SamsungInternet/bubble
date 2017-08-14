@@ -5,8 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     peer = new Peer({key: 'bw0dbyumsbz3q5mi'});
     conn = peer.connect(peerid);
     conn.on('data', function(data){
-        console.log('received: ' + data );
+        console.log('in: ' + data );
+        reconstructImage(data, 4096, 4096);
     });
-    conn.send('HELLO WORLD');
+    //conn.send('HELLO WORLD');
 });
+
+var reconstructImage = function(data, width, height){
+    console.log('reconstructing image')
+    //var imgData = new ImageData(data, width, height);
+};
 

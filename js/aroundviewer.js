@@ -1,6 +1,8 @@
 var passedUrl = '';
 var peer = null;
 var conn = null;
+var conns = [];
+var imgDataToSend = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     var ext_res = getUrlParameter('pic');
@@ -20,6 +22,11 @@ function init(){
     var uploadBtn = document.getElementById('selectButton'),
         fileElem = document.getElementById('fileSelection'),
         btnEllipsis = document.getElementById('btnMenu');
+
+    var shareBtn = document.getElementById('shareButton');
+    shareBtn.addEventListener('click', function (e){
+         startPeer();
+    });
 
     btnEllipsis.addEventListener('click', function(){
          var fs = document.getElementById('fileSelector');
@@ -89,7 +96,7 @@ var getCurrentImageData = function(){
     //uses image loaded in skybox
     var img = document.getElementById('texture');
     ctx.drawImage(img, 0, 0, 4096, 4096);
-    var imgData = ctx.getImageData();
+    var imgData = ctx.getImageData(0,0,4096,4096);
     return imgData;
 };
 
@@ -97,22 +104,24 @@ var startPeer = function(){
     
     peer = new Peer({key: 'bw0dbyumsbz3q5mi'});
     peer.on('open', function(id) {
-        document.getElementById('peerId').innerText = id;
+        document.getElementById('peerId').innerText = 'https://samsunginter.net/bubble/share.html?id='+id;
     });
 
     peer.on('connection', function(con){
-
         console.log('incoming connection from '+ con.peer);
 
+        conns.push(con.peer);
+        imgDataToSend = getCurrentImageData();
+        for(i = 0; i < conns.length; i++){
+            peer.connections[conns[i]][0].send(imgDataToSend.data);
+            console.log(imgDataToSend.data);
+        }
+        
         con.on('data', function(data){
-            console.log('Incoming data', data);
+            console.log('in: ' + data);
             con.send('received ' + peer.id);
         });
     });
-
-
-
-
 };
 
 

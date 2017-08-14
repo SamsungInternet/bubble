@@ -22,3 +22,10 @@ a:link, a:hover, a:visited, a:active{
 .btnIcon{
     vertical-align: middle;
 }
+
+#loading{
+    font-size: 3em;
+    margin: auto;
+    width: 5em;
+    padding: 3em;
+}

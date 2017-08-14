@@ -109,7 +109,7 @@ var startPeer = function(){
     
     peer = new Peer({key: 'bw0dbyumsbz3q5mi'});
     peer.on('open', function(id) {
-        document.getElementById('peerId').innerText = 'https://samsunginter.net/bubble/share.html?id='+id;
+        document.getElementById('peerId').innerText = 'bubble.pictures/share.html?id='+id;
         document.getElementById('shareBtnText').innerText = 'share this link:';
 
     });

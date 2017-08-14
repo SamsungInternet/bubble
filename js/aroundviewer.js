@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var ext_res = getUrlParameter('pic');
     if(ext_res != ''){
         var fs = document.getElementById('fileSelector');
-        var bm = document.getElementById('btnMenu');
+        var bm = document.getElementById('btnEllipsis');
         fs.style.animationName="minimize";
         bm.style.display = 'block';
         createImage(ext_res, true);
@@ -21,23 +21,24 @@ function init(){
 
     var uploadBtn = document.getElementById('selectButton'),
         fileElem = document.getElementById('fileSelection'),
-        btnEllipsis = document.getElementById('btnMenu');
+        btnEllipsis = document.getElementById('btnEllipsis');
 
     var shareBtn = document.getElementById('shareButton');
     shareBtn.addEventListener('click', function (e){
+         imgDataToSend = getCurrentImageData();
          startPeer();
     });
 
     btnEllipsis.addEventListener('click', function(){
          var fs = document.getElementById('fileSelector');
-         var bm = document.getElementById('btnMenu');
+         var bm = document.getElementById('btnEllipsis');
         fs.style.animationName='maximize';
         bm.style.display = 'none';
     });
 
     uploadBtn.addEventListener('click', function (e) {
         var fs = document.getElementById('fileSelector');
-        var bm = document.getElementById('btnMenu');
+        var bm = document.getElementById('btnEllipsis');
 
         fs.style.animationName = 'minimize';
         bm.style.display = 'block';
@@ -104,23 +105,22 @@ var startPeer = function(){
     
     peer = new Peer({key: 'bw0dbyumsbz3q5mi'});
     peer.on('open', function(id) {
-        document.getElementById('peerId').innerText = 'https://samsunginter.net/bubble/share.html?id='+id;
+        document.getElementById('peerId').innerText = 'share this link: https://samsunginter.net/bubble/share.html?id='+id;
     });
 
     peer.on('connection', function(con){
-        console.log('incoming connection from '+ con.peer);
-
         conns.push(con.peer);
-        imgDataToSend = getCurrentImageData();
-        for(i = 0; i < conns.length; i++){
-            peer.connections[conns[i]][0].send(imgDataToSend.data);
-            console.log(imgDataToSend.data);
-        }
+        
+        con.on('open', function(){
+            con.send(imgDataToSend.data);
+            console.log('incoming connection from '+ con.peer);
+        });
         
         con.on('data', function(data){
             console.log('in: ' + data);
             con.send('received ' + peer.id);
         });
+        
     });
 };
 

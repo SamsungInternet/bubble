@@ -7,6 +7,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="i/bubbleicon.png">
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="f/fonts.css">
     <script src="js/aroundviewer.js"></script>
     <script src="js/e/aframe.min.js"></script>
     <script src="js/e/peer.min.js"></script>
@@ -23,10 +24,22 @@
         </div>
         <div id="fileSelector" class="fileSelector">
             <input type="file" id="fileSelection" onchange="handleFiles(this.files)" style="display:none" accept="image/gif, image/jpeg, image/png" >
-            <img src="i/appHeader.png" id="bIcon">
-            <a href="#" id="selectButton"><img src="i/btnSelectDevice.png" class="menuButton"></a>
-             <img src="i/btnInstantShare.png" id="shareButton" class="menuButton">
-            <img src="i/btnMenu.png" id="btnMenu">
+            <img src="i/appHeader.svg" id="appLogo">
+            <p>360º image viewer</p>
+            <div class="mainMenuBtn" id="selectButton">
+                <a href="#">
+                    <img src="i/iconSelectDevice.svg" class="btnIcon">
+                    Select from device
+                </a>
+            </div>
+            <div class="mainMenuBtn" id="shareButton">
+                <a>
+                    <img src="i/iconInstantShare.svg" id="shareButton" class="btnIcon">
+                    Instant Share
+                </a>
+            </div>
+
+            <img src="i/btnEllipsis.svg" id="btnEllipsis">
             <div id="peerId"></div>
         </div>
     </main>

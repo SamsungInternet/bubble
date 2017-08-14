@@ -3,24 +3,27 @@ body {
     margin: 0px;
     background-color: #3D3D3D;
     color: #FFF;
+    font-family:'Samsung One'; 
 }
 
-.menuButton {
+a:link, a:hover, a:visited, a:active{
+    color: #FFF;
+    text-decoration: none;
+}
+
+.btnIcon {
     margin: .5em;
+    width: 2em;
     cursor:pointer;
-    width: 11em;
+    vertical-align: middle;
 }
 
-#btnMenu{
+#btnEllipsis{
     margin: auto;
+    padding: .5em;
     width: 2em;
     display: none;
     cursor:pointer;
-}
-
-#bIcon{
-    margin: auto;
-    width: 11em;
 }
 
 .fullArea {
@@ -31,17 +34,23 @@ body {
 }
 
 .fileSelector {
-    position: relative;
-    top: 5em;
     transform: translateY(0);
     will-change: transform;
     z-index: 11;
     margin: auto;
-    width: 12em;
     animation-name: maximize;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
+    background-color: rgba(0, 150, 255, .7);
+    border: black 1px solid;
+    text-align: center;
+}
+
+#appLogo{
+    margin: auto;
+    margin-top: 1em;
+    width: 8em;
 }
 
 .loadText{
@@ -52,18 +61,30 @@ body {
     align-content: center;  
 }
 
+.mainMenuBtn{
+    background-color: rgba(0, 0, 0, .7);
+    color: white;
+    font-size: 0.9em;
+    display: block;
+    padding: .5em;
+}
+
+#peerId{
+    margin: .25em;
+}
+
 @keyframes minimize {
     from {
         transform: translateY(0);
     }
     to {
-        transform: translateY(-16em);
+        transform: translateY(-13em);
     }
 }
 
 @keyframes maximize {
     from {
-        transform: translateY(-16em);
+        transform: translateY(-13em);
     }
     to {
         transform: translateY(0);
@@ -72,32 +93,37 @@ body {
 
 /*medium sized screen*/
 @media (min-width: 400px) {
-    .menuButton {
-        width: 18em;
+    .btnIcon {
+        width: 4em;
     }
     .fileSelector {
         width: 18em;
     }
-    #bIcon{
+    #appLogo{
         margin: auto;
-        width: 18em;
+        margin-top: 1em;
+        width: 15em;
     }
     #btnMenu{
         margin: auto;
-        width: 4em;
+        width: 3em;
     }
+    .mainMenuBtn{
+        font-size: 1.1em;
+    }
+
     @keyframes minimize {
         from {
             transform: translateY(0);
         }
         to {
-            transform: translateY(-22em);
+            transform: translateY(-19em);
         }
     }
 
     @keyframes maximize {
         from {
-            transform: translateY(-22em);
+            transform: translateY(-19em);
         }
         to {
             transform: translateY(0);
@@ -107,32 +133,37 @@ body {
 
 /*big sized screen*/
 @media (min-width: 1000px) {
-    .menuButton {
-        width: 25em;
+    .btnIcon {
+        width: 4em;
     }
     .fileSelector {
         width: 25em;
     }
-    #bIcon{
+    #appLogo{
         margin: auto;
-        width: 25em;
+        margin-top: 1em;
+        width: 20em;
     }
     #btnMenu{
         margin: auto;
-        width: 5em;
+        width: 4em;
     }
+    .mainMenuBtn{
+        font-size: 1.5em;
+    }
+
     @keyframes minimize {
         from {
             transform: translateY(0);
         }
         to {
-            transform: translateY(-27.4em);
+            transform: translateY(-24.1em);
         }
     }
 
     @keyframes maximize {
         from {
-            transform: translateY(-27.4em);
+            transform: translateY(-24.1em);
         }
         to {
             transform: translateY(0);

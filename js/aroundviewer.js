@@ -32,16 +32,20 @@ function init(){
     btnEllipsis.addEventListener('click', function(){
          var fs = document.getElementById('fileSelector');
          var bm = document.getElementById('btnEllipsis');
-        fs.style.animationName='maximize';
-        bm.style.display = 'none';
+        if(fs.style.animationName=='minimize')
+            fs.style.animationName='maximize';
+        else
+            fs.style.animationName='minimize';
+
+        //bm.style.display = 'none';
     });
 
     uploadBtn.addEventListener('click', function (e) {
         var fs = document.getElementById('fileSelector');
-        var bm = document.getElementById('btnEllipsis');
+        //var bm = document.getElementById('btnEllipsis');
 
         fs.style.animationName = 'minimize';
-        bm.style.display = 'block';
+        //bm.style.display = 'block';
 
         if (fileElem) {
             fileElem.click();
@@ -105,7 +109,9 @@ var startPeer = function(){
     
     peer = new Peer({key: 'bw0dbyumsbz3q5mi'});
     peer.on('open', function(id) {
-        document.getElementById('peerId').innerText = 'share this link: https://samsunginter.net/bubble/share.html?id='+id;
+        document.getElementById('peerId').innerText = 'https://samsunginter.net/bubble/share.html?id='+id;
+        document.getElementById('shareBtnText').innerText = 'share this link:';
+
     });
 
     peer.on('connection', function(con){

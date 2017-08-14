@@ -22,7 +22,7 @@ a:link, a:hover, a:visited, a:active{
     margin: auto;
     padding: .5em;
     width: 2em;
-    display: none;
+    display: block;
     cursor:pointer;
 }
 
@@ -43,7 +43,6 @@ a:link, a:hover, a:visited, a:active{
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
     background-color: rgba(0, 150, 255, .7);
-    border: black 1px solid;
     text-align: center;
 }
 
@@ -70,12 +69,14 @@ a:link, a:hover, a:visited, a:active{
 }
 
 #peerId{
-    margin: .25em;
+    margin: .5em;
+    word-wrap: break-word;
 }
 
 @keyframes minimize {
     from {
         transform: translateY(0);
+        background-color: rgba(0, 150, 255, .7);
     }
     to {
         transform: translateY(-13em);

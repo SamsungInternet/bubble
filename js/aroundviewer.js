@@ -24,10 +24,10 @@ function init(){
         btnEllipsis = document.getElementById('btnEllipsis');
 
     var shareBtn = document.getElementById('shareButton');
-    shareBtn.addEventListener('click', function (e){
-         imgDataToSend = getCurrentImageData();
-         startPeer();
-    });
+    //shareBtn.addEventListener('click', function (e){
+         //imgDataToSend = getCurrentImageData();
+         //startPeer();
+    //});
 
     btnEllipsis.addEventListener('click', function(){
          var fs = document.getElementById('fileSelector');

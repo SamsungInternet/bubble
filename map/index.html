@@ -14,6 +14,7 @@
     <a-scene>
         <a-assets>
             <img id="sky" src="i/bg.jpg">
+            <img id="logo-globe" src="i/globeLogo.png">
             <a-asset-item id="m-worldMap" src="m/worldMapLowPoly.glb"></a-asset-item>
             <a-asset-item id="m-siLogo" src="m/SamsungInternetLogo.glb"></a-asset-item>
         </a-assets>
@@ -27,6 +28,9 @@
 
         <a-sphere src="i/worldbg.png" material="transparent:true" radius="20" position="0 0 0" scale="-1 1 1"></a-sphere>
 
+        <a-entity scale="3.5 5.5 1" position="0 2 -6" material="opacity:0.85;transparent:true;color:#000" geometry="primitive:plane"></a-entity>
+        <a-image src="#logo-globe" position="0 3.5 -5" scale="2.3 1 1"></a-image>
+
 
         <a-sphere src="i/360o/staines.jpg" radius=".6" position="-15.4 11.2 0.4" scale="-1 1 1"></a-sphere>
         <a-sphere src="i/360o/helsinki.jpg" position="-12.172 13.196 -5.856" scale="-1 1 1" radius=".6"></a-sphere>
@@ -36,6 +40,7 @@
         <a-sphere src="i/360o/losangeles.jpg" radius=".6" position="8.3 7 15.7" scale="-1 1 1"></a-sphere>
         <a-sphere src="i/360o/paris.jpg" radius=".6" position="-16.216 10.207 -1.101" scale="-1 1 1"></a-sphere>
         <a-sphere src="i/360o/sanjose.jpg" radius=".6" position="-1.9 1.4 18.7" scale="-1 1 1"></a-sphere>
+        <a-sphere src="i/360o/jerusalem.jpg" position="-15 6 -10.2" scale="-1 1 1" radius=".6"></a-sphere>
 
 
     </a-scene>

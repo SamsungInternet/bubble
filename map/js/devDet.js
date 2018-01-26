@@ -11,14 +11,17 @@ var deviceDetection = function(){
             console.log(displays[0].displayName + " attached");
 
             if(AFRAME.utils.device.isGearVR()){
-              addGearVRControl();
+              //addGearVRControl();
+              addLaserControls();
             }
             else if(displays[0].displayName.indexOf('Windows Mixed Reality') != -1){ 
-              addWindowsMixedRealityControllers();
+              //addWindowsMixedRealityControllers();
+              addLaserControls();
             }
             else if(displays[0].displayName.indexOf('Oculus') != -1)
             {
-              addOculusTouch();
+              //addOculusTouch();
+              addLaserControls();
             }
             console.log('added tracked controls');
           }
@@ -48,6 +51,15 @@ var createCursor = function(){
 
   t_cam.appendChild(t_cursor);
   console.log('added cursor');
+}
+
+var addLaserControls = function(){
+  var t_touchCtrls_L = document.createElement('a-entity');
+  t_touchCtrls_L.setAttribute('laser-controls', 'hand:left');
+  document.querySelector('a-scene').appendChild(t_touchCtrls_L);
+  var t_touchCtrls_R = document.createElement('a-entity');
+  t_touchCtrls_R.setAttribute('laser-controls', 'hand:right');
+  document.querySelector('a-scene').appendChild(t_touchCtrls_R);
 }
 
 var addOculusTouch = function(){

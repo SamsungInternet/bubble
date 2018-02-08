@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>bubble world map demo</title>
-    <script src="/js/e/aframe.min.js"></script>
+    <script src="js/e/aframe.js"></script>
     <script src="js/devDet.js"></script>
     <script src="js/vr0.js"></script>
     
@@ -15,6 +15,7 @@
         <a-assets>
             <img id="sky" src="i/bg.jpg">
             <img id="logo-globe" src="i/globeLogo.png">
+            <img id="atmosphere" src="i/atmosphere.png">
             <a-asset-item id="m-worldMap" src="m/worldMapLowPoly.glb"></a-asset-item>
             <a-asset-item id="m-siLogo" src="m/SamsungInternetLogo.glb"></a-asset-item>
         </a-assets>
@@ -25,8 +26,12 @@
         <a-sphere src="i/bg.jpg" radius="30" position="0 0 0" scale="-1 1 1">
             <a-animation attribute="rotation" dur="600000" fill="forwards" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
         </a-sphere>
-
         <a-sphere src="i/worldbg.png" material="transparent:true" radius="20" position="0 0 0" scale="-1 1 1"></a-sphere>
+        <a-sphere src="i/atmosphere.jpg" material="transparent:true;opacity:0.2" radius="18" position="0 0 0" scale="-1 1 1">
+            <a-animation attribute="rotation" dur="600000" fill="forwards" to="0 -360 0" repeat="indefinite" easing="linear"></a-animation>
+        </a-sphere>
+
+        
 
         <a-entity scale="3.5 5.5 1" position="0 2 -6" material="opacity:0.85;transparent:true;color:#000" geometry="primitive:plane"></a-entity>
         <a-image src="#logo-globe" position="0 3.5 -5" scale="2.3 1 1"></a-image>

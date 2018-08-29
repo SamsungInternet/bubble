@@ -2,7 +2,7 @@
 var CACHE_NAME = 'bubble-v1';
 var urlsToCache = [
     'css/style.css',
-    'js/aroundviewer.js',
+    'js/bubble.js',
     'js/e/aframe.min.js',
     'i/appHeader.svg',
     'i/iconSelectDevice.svg',
